@@ -1,0 +1,36 @@
+{
+  "name": "mangoapps_cypress",
+  "version": "1.0.0",
+  "description": "MangoApp_Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run — env allure=true",
+    "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
+    "allure:report": "yarn run allure generate allure-results — clean -o allure-report && allure open allure-report",
+    "beforetest": "npm run clean:folders",
+    "tests": "npm run cy:run || npm run aftertest",
+    "aftertest": "npm run allure:report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShriByjus/MangoApps_Cypress.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "shrinath mirashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShriByjus/MangoApps_Cypress/issues"
+  },
+  "homepage": "https://github.com/ShriByjus/MangoApps_Cypress#readme",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.35.2",
+    "allure-commandline": "^2.21.0",
+    "cypress": "^12.6.0",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8"
+  }
+}
