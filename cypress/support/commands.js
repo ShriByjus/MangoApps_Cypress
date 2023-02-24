@@ -36,3 +36,12 @@ Cypress.Commands.add('shareAndUpdate', ()=>{
     logInPageObjects.clickOnShareButton.click();
 })
 
+Cypress.Commands.add('verifyUploadedPdfFile', ()=>{
+    cy.wait(5000);
+    logInPageObjects.searchUploadedPDF.click({force: true});
+    logInPageObjects.searchUploadedPDF.type(userCredentials.myUpdate);
+    logInPageObjects.searchUploadedPDF.type('{enter}');
+    logInPageObjects.openUploadedPdfFile.click();
+   
+})
+
