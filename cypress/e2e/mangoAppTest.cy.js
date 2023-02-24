@@ -7,6 +7,7 @@ describe('Simplae Mango App Test', ()=>{
     cy.loginCredentials();
     cy.selectUpdateOption();
     cy.shareAndUpdate();
+    cy.verifyUploadedPdfFile();
 
   })
 
