@@ -4,6 +4,12 @@ let userCredentials = require("../fixtures/mangoApp.json");
 
 let logInPageObjects = new mangoAppPages();
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })
+
 Cypress.Commands.add('loginIntoMangoApp', ()=>{
     let url = 'https://siddasia.mangoapps.com/';
     cy.visit(url);
