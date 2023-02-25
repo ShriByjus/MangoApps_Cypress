@@ -42,6 +42,8 @@ Cypress.Commands.add('verifyUploadedPdfFile', ()=>{
     logInPageObjects.searchUploadedPDF.type(userCredentials.myUpdate);
     logInPageObjects.searchUploadedPDF.type('{enter}');
     logInPageObjects.openUploadedPdfFile.click();
+    logInPageObjects.verifyUploadedPdfFile.click();
+    logInPageObjects.viewUploadedPdfFile.click();
    
 })
 
